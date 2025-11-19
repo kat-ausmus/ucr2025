@@ -1,0 +1,20 @@
+{
+  "name": "@ucr2025/ucr-api",
+  "version": "1.0.0",
+  "description": "Uniform Crime Reporting Fastify API server for ucr2025 (workspace package)",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2"
+  },
+  "keywords": ["fastify", "api", "workspace"],
+  "author": "Kat Ausmus",
+  "license": "ISC"
+}

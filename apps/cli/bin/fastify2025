@@ -1,0 +1,36 @@
+#!/usr/bin/env node
+
+// Simple placeholder CLI for ucr2025
+// Usage: ucr2025 [--help] [--version]
+
+const args = process.argv.slice(2);
+
+if (args.includes('--version') || args.includes('-v')) {
+  console.log('ucr2025-cli v0.1.0');
+  process.exit(0);
+}
+
+if (args.includes('--help') || args.includes('-h')) {
+  console.log(`
+fastify2025 CLI
+
+Usage:
+  fastify2025 [command]
+
+Options:
+  -h, --help     Show help
+  -v, --version  Show version
+
+Commands:
+  hello          Print a friendly greeting
+`);
+  process.exit(0);
+}
+
+if (args[0] === 'hello') {
+  console.log('Hello from ucr2025 CLI!');
+  process.exit(0);
+}
+
+console.log('Unknown command. Try "ucr2025 --help"');
+process.exit(1);

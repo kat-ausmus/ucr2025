@@ -1,0 +1,30 @@
+{
+  "name": "@ucr2025/cli",
+  "version": "0.1.0",
+  "description": "CLI tools for the UCR project",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "tsx src/index.ts",
+    "ucr:load": "tsx src/index.ts load-file",
+    "format": "prettier --write \"src/**/*.{ts,js,json,md}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,js,json,md}\""
+  },
+  "license": "ISC",
+  "author": "Kat Ausmus",
+  "keywords": [
+    "cli",
+    "tools"
+  ],
+  "dependencies": {
+    "clipanion": "^4.0.0-rc.4",
+    "csv-parse": "^5.5.6",
+    "typanion": "^3.14.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2"
+  }
+}

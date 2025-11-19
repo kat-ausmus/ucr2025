@@ -1,0 +1,189 @@
+{
+  "version": "6.0",
+  "nxVersion": "20.8.2",
+  "pathMappings": {},
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "nonProjectFiles": [
+      {
+        "file": ".idea/ucr2025.iml",
+        "hash": "2091662290190038625"
+      },
+      {
+        "file": ".idea/prettier.xml",
+        "hash": "13711802271405639796"
+      },
+      {
+        "file": ".idea/vcs.xml",
+        "hash": "14600148892634157659"
+      },
+      {
+        "file": "migrations.json",
+        "hash": "4523290500298117116"
+      },
+      {
+        "file": ".idea/.gitignore",
+        "hash": "10286036308014790964"
+      },
+      {
+        "file": "docker-compose.yml",
+        "hash": "17403941955618335820"
+      },
+      {
+        "file": "nx.json",
+        "hash": "16496366484614980326"
+      },
+      {
+        "file": "tsconfig.json",
+        "hash": "9798224058529512650"
+      },
+      {
+        "file": ".idea/nx-angular-config.xml",
+        "hash": "11747644467998611843"
+      },
+      {
+        "file": "knexfile.cjs",
+        "hash": "14101004608762435663"
+      },
+      {
+        "file": ".idea/codeStyles/codeStyleConfig.xml",
+        "hash": "4690022301721055948"
+      },
+      {
+        "file": "LICENSE",
+        "hash": "14624026816048792793"
+      },
+      {
+        "file": "knexfile.ts",
+        "hash": "13629841944067529497"
+      },
+      {
+        "file": "eslint.config.mjs",
+        "hash": "10918138619429371280"
+      },
+      {
+        "file": ".idea/codeStyles/Project.xml",
+        "hash": "12309178538774209979"
+      },
+      {
+        "file": "package-lock.json",
+        "hash": "8653176106458123374"
+      },
+      {
+        "file": ".idea/modules.xml",
+        "hash": "14329172090656959659"
+      },
+      {
+        "file": "package.json",
+        "hash": "15712082667559358089"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "13119912102255678890"
+      }
+    ],
+    "projectFileMap": {
+      "@ucr2025/cli": [
+        {
+          "file": "apps/cli/.prettierignore",
+          "hash": "17052196084777099500"
+        },
+        {
+          "file": "apps/cli/.prettierrc",
+          "hash": "15988839688270946792"
+        },
+        {
+          "file": "apps/cli/bin/fastify2025",
+          "hash": "17812467343038696571"
+        },
+        {
+          "file": "apps/cli/package.json",
+          "hash": "15723583391571518317",
+          "deps": [
+            "npm:prettier",
+            "npm:clipanion",
+            "npm:csv-parse",
+            "npm:typanion"
+          ]
+        },
+        {
+          "file": "apps/cli/src/index.ts",
+          "hash": "3390239994453031300"
+        },
+        {
+          "file": "apps/cli/src/loadUCR/loadUCRToDb.ts",
+          "hash": "10144226669772634701"
+        },
+        {
+          "file": "apps/cli/tsconfig.json",
+          "hash": "288993665876570454"
+        }
+      ],
+      "ucr-api": [
+        {
+          "file": "apps/ucr-api/.prettierignore",
+          "hash": "17052196084777099500"
+        },
+        {
+          "file": "apps/ucr-api/.prettierrc",
+          "hash": "15988839688270946792"
+        },
+        {
+          "file": "apps/ucr-api/migrations/20251006171500_ensure_human_trafficking.ts",
+          "hash": "16657166356810618172"
+        },
+        {
+          "file": "apps/ucr-api/package.json",
+          "hash": "3556410673647116407",
+          "deps": [
+            "npm:prettier"
+          ]
+        },
+        {
+          "file": "apps/ucr-api/project.json",
+          "hash": "16840648552972636554"
+        },
+        {
+          "file": "apps/ucr-api/src/index.ts",
+          "hash": "16448974802852590883"
+        },
+        {
+          "file": "apps/ucr-api/src/routes/root-route.ts",
+          "hash": "17781564378709652377"
+        },
+        {
+          "file": "apps/ucr-api/src/routes/ucr/ht-route.ts",
+          "hash": "6913219268880857347"
+        },
+        {
+          "file": "apps/ucr-api/src/schema/requestSchema.ts",
+          "hash": "5983153225015478908"
+        },
+        {
+          "file": "apps/ucr-api/src/schema/responseSchema.ts",
+          "hash": "8971828250773159496"
+        },
+        {
+          "file": "apps/ucr-api/src/services/ht-services.ts",
+          "hash": "10193085301052433056"
+        },
+        {
+          "file": "apps/ucr-api/src/services/root-services.ts",
+          "hash": "4765863267974207115"
+        },
+        {
+          "file": "apps/ucr-api/src/types/requestTypes.ts",
+          "hash": "5996818819250676502"
+        },
+        {
+          "file": "apps/ucr-api/src/types/responseTypes.ts",
+          "hash": "18148860473006967102"
+        },
+        {
+          "file": "apps/ucr-api/tsconfig.json",
+          "hash": "16989330636681614091"
+        }
+      ]
+    }
+  }
+}

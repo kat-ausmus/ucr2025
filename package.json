@@ -1,0 +1,46 @@
+{
+  "name": "ucr2025",
+  "version": "1.0.0",
+  "description": "Playing around with Fastify for Uniform Crime Reporting data (UCR)",
+  "main": "index.js",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "nx run ucr-api:dev",
+    "build": "nx run-many -t build --all",
+    "start": "nx run ucr-api:start",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "migrate": "tsx ./node_modules/knex/bin/cli.js migrate:latest --knexfile knexfile.ts",
+    "migrate:rollback": "tsx ./node_modules/knex/bin/cli.js migrate:rollback --knexfile knexfile.ts",
+    "api:dev": "nx run ucr-api:dev",
+    "api:build": "nx run ucr-api:build",
+    "api:start": "nx run ucr-api:start",
+    "apps:build": "nx run-many -t build --all"
+  },
+  "keywords": [
+    "fastify",
+    "typescript",
+    "node",
+    "js"
+  ],
+  "author": "Kat Ausmus",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "fastify": "^5.6.1"
+  },
+  "devDependencies": {
+    "@fastify/postgres": "^6.0.2",
+    "@types/node": "^24.6.2",
+    "json-schema-to-ts": "^3.1.1",
+    "knex": "^3.1.0",
+    "pg": "^8.16.3",
+    "prettier": "^3.6.2",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "nx": "^20.0.0"
+  }
+}
