@@ -21,6 +21,15 @@ export const queryStringProperties = {
 export const queryStringSchema = {
     type: 'object',
     properties: queryStringProperties,
-    additionalProperties: true,
+    additionalProperties: false,
 } as const;
+
+
+export const paramsJsonSchema = {
+  type: 'object',
+  properties: {
+    id: { type: 'string' },
+  },
+  required: ['id'],
+}
 

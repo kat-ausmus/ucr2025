@@ -64,6 +64,8 @@ const  transformFilters = (queryParms: Omit<{}, "limit" | "page" | "sort" | "ord
     return base;
 }
 
+const table = 'human_trafficking';
+
 export const queryHumanTraffickingData = async (request: any, reply: any) => {
   // Extract and normalize query params
   let { page = 1, limit = 40, sort = ['data_year', 'ori'], order = 'asc', ...rest } =
@@ -82,8 +84,6 @@ export const queryHumanTraffickingData = async (request: any, reply: any) => {
   const knex = knexFactory(knexConfig);
 
   try {
-    const table = 'human_trafficking';
-
     // Base query builder with optional search
     const base = knex(table).select('*');
 
@@ -127,14 +127,25 @@ export const queryHumanTraffickingData = async (request: any, reply: any) => {
       },
     };
 
-    return reply ? reply.send(result) : result;
+    return reply.send(result);
   } catch (err) {
-    request?.log?.error?.(err, 'Failed to query human trafficking data');
-    if (reply && typeof reply.code === 'function') {
-      return reply.code(500).send({ error: 'Internal Server Error' });
-    }
-    throw err;
+    request.log.error(err, 'Failed to query human trafficking data');
+    return reply.code(500).send({ error: 'Internal Server Error' });
   } finally {
     await knex.destroy();
   }
 };
+
+export const getHumanTraffickingDataById = async (request: any, reply: any) => {
+  const knex = knexFactory(knexConfig);
+  try {
+    const id = request.params.id;
+    const data = await knex(table).where({ id }).first();
+    return data ? reply.send(data) : reply.code(404).send({ error: 'Item not found' });
+  } catch (err) {
+    request.log.error(err, 'Failed to get human trafficking data by ID');
+    throw err
+  } finally {
+    await knex.destroy();
+  }
+}

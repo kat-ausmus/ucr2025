@@ -1,10 +1,12 @@
-import Fastify, { FastifyInstance } from 'fastify';
+import build from './app.ts';
 import pkg from '../package.json' assert { type: "json" };
+import fastifyCors from '@fastify/cors';
 
 import { routes as rootRoute } from './routes/root-route.ts';
 import { routes as htRoute } from './routes/ucr/ht-route.ts';
+import { FastifyInstance } from 'fastify';
 
-const server: FastifyInstance = Fastify({
+const server: FastifyInstance = build({
   logger: true,
 });
 
@@ -20,8 +22,26 @@ server.addHook('onSend', async (_request, reply, payload) => {
   return payload;
 });
 
+// Route does not exists
+server.setNotFoundHandler((request, reply) => {
+  reply
+    .code(404)
+    .header('Content-Type', 'application/json')
+    .send({
+      error: 'Not Found',
+      message: `Resource '${request.url}' was not found`,
+      statusCode: 404
+    })
+});
+
 server.register(rootRoute);
 server.register(htRoute, { prefix: '/ucr' });
+server.register(fastifyCors, {
+  // CORS options go here
+  origin: '*', // Allow all origins (for development, consider specific origins in production)
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
+  credentials: true, // Allow sending cookies or authentication tokens
+});
 
 const start = async () => {
   try {
